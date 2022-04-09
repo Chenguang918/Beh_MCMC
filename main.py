@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-class LoadData():
+class LoadData():  # load data
 
     def LoadCsvData(self, filename):
         with open(filename) as raw_data:
