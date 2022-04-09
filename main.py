@@ -29,6 +29,6 @@ class PlotViolin():
 
 if __name__ == '__main__':
     data1 = LoadData()  # 实例化
-    plot1 = PlotViolin()
+    plot1 = PlotViolin() #
     data=data1.LoadCsvData('C:/Users/lgh/OneDrive/Paper5/MCMC_data/text.csv') # 反斜杠才对
     plot1.PlotCombinedViolin('Exp','Kmax','tPBM',data)
