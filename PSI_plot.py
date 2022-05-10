@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from pandas import Series, DataFrame
 import matplotlib.pyplot as plt
-import seaborn as sns
+import seaborn as sns   # seaborn 基于 matplotlib
 
 
 class LoadData():  # load data
@@ -16,12 +16,11 @@ class LoadData():  # load data
 
 class PlotViolin():
 
-    def PlotCombinedViolin(self, xlabel, ylabel, combine_label, data): # self 方法内的实例化调用的前提条件
+    def PlotCombinedViolin(self,data): # self 方法内的实例化调用的前提条件
         #
 
         sns.set(style='whitegrid', color_codes=True)
-        fig, axes = plt.subplots(1, 2, figsize=(10, 5))
-        sns.violinplot(x=xlabel, y=ylabel, hue=combine_label, data=data, split=True, ax=axes[0], inner='point',alpha=0.5)
+        sns.violinplot(x='Exp', y='PSI', hue='Group', data=data, split=True, inner='box',alpha=0.5)
         plt.show()
 
 
@@ -30,5 +29,5 @@ class PlotViolin():
 if __name__ == '__main__':
     data1 = LoadData()  # 实例化
     plot1 = PlotViolin() #
-    data=data1.LoadCsvData('C:/Users/lgh/OneDrive/Paper5/MCMC_data/text.csv') # 反斜杠才对
-    plot1.PlotCombinedViolin('Exp','Kmax','tPBM',data)
+    data=data1.LoadCsvData('C:/Users/lgh/OneDrive/Paper5/PSI_data/PSI_data2py.csv') # 反斜杠才对
+    plot1.PlotCombinedViolin(data)
